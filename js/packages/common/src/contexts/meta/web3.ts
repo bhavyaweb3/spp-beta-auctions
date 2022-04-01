@@ -2,6 +2,10 @@ import { AccountInfo, Connection } from '@solana/web3.js';
 import { StringPublicKey } from '../../utils/ids';
 import { AccountAndPubkey } from './types';
 
+export async function getProgramAccountsData(creator: any, unsafeRes: any) {
+  return unsafeResAccounts(unsafeRes.result);
+}
+
 export async function getProgramAccounts(
   connection: Connection,
   programId: StringPublicKey,
@@ -10,7 +14,7 @@ export async function getProgramAccounts(
   const extra: any = {};
   let commitment;
   //let encoding;
-
+  console.log(programId + " started")
   if (configOrCommitment) {
     if (typeof configOrCommitment === 'string') {
       commitment = configOrCommitment;
@@ -33,7 +37,7 @@ export async function getProgramAccounts(
     'getProgramAccounts',
     args,
   );
-
+  console.log(programId + " done")
   return unsafeResAccounts(unsafeRes.result);
 }
 

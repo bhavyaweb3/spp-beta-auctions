@@ -212,8 +212,9 @@ export function MetaProvider({
     } else if (!state.store) {
       setIsLoading(true);
     }
+    console.log(1);
     console.log('------->Query started');
-
+    console.log(2);
     const nextState = await loadAccounts(connection);
 
     console.log('------->Query finished');

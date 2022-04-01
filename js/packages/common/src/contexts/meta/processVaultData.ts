@@ -24,6 +24,8 @@ export const processVaultData: ProcessAccountsFunc = (
         account: account,
         info: safetyDeposit,
       };
+      console.log("Safety account: ")
+      console.log(parsedAccount)
       setter(
         'safetyDepositBoxesByVaultAndIndex',
         safetyDeposit.vault + '-' + safetyDeposit.order,
